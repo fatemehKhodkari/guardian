@@ -99,11 +99,11 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset('assets/waiterssplash/icons/waiter.png',
+                    Image.asset('assets/waiterssplash/icons/waiter1.png',
                       color: Colors.white,
-                      width: ResponsiveFlutter.of(context).wp(15),
+                      width: ResponsiveFlutter.of(context).wp(30),
                     ),
                     SizedBox(height: ResponsiveFlutter.of(context).hp(2),),
                     Text("Waiter", style: TextStyle(
@@ -112,7 +112,6 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                         fontWeight: FontWeight.bold
                     ),
                     ),
-                    SizedBox(height: ResponsiveFlutter.of(context).hp(20),),
                   ],
                 ),
               ),
