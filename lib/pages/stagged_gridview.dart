@@ -1,5 +1,9 @@
+import 'dart:async';
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:responsive_flutter/responsive_flutter.dart';
 
 class StaggeredGridViewExample extends StatefulWidget {
@@ -32,8 +36,10 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
   ];
 
   ScrollController _scrollController = ScrollController();
-
+  bool _visible=true;
+  bool _visible2=false;
   @override
+  final Duration initialDelay = Duration(seconds: 1);
   void initState() {
     Future.delayed(Duration(seconds: 0), () {
       _scrollController.animateTo(
@@ -44,6 +50,14 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
     });
 
     super.initState();
+    Future.delayed(const Duration(seconds: 5), () { //asynchronous delay
+      if (this.mounted) { //checks if widget is still active and not disposed
+        setState(() { //tells the widget builder to rebuild again because ui has updated
+          _visible=false; //update the variable declare this under your class so its accessible for both your widget build and initState which is located under widget build{}
+          _visible2=true;
+        });
+      }
+    });
   }
 
   @override
@@ -96,21 +110,163 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                     topRight: Radius.circular(20),
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset('assets/waiterssplash/icons/waiter1.png',
-                      color: Colors.white,
-                      width: ResponsiveFlutter.of(context).wp(30),
-                    ),
-                    SizedBox(height: ResponsiveFlutter.of(context).hp(2),),
-                    Text("Waiter", style: TextStyle(
-                        color: Colors.white,
-                        fontSize: ResponsiveFlutter.of(context).fontSize(2),
-                        fontWeight: FontWeight.bold
-                    ),
-                    ),
+                child:
+                    Stack(
+                      children: [
+                        Visibility(
+                          child: Container(
+                            child: Center(
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset('assets/waiterssplash/icons/waiter1.png',
+                                      color: Colors.white,
+                                      width: ResponsiveFlutter.of(context).wp(30),
+                                    ),
+                                    SizedBox(height: ResponsiveFlutter.of(context).hp(2),),
+                                    Text("Waiter", style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: ResponsiveFlutter.of(context).fontSize(2),
+                                        fontWeight: FontWeight.bold
+                                    ),
+                                    ),
+                                  ]
+                              ),
+                            ),
+                          ),
+                          maintainSize: true,
+                          maintainAnimation: true,
+                          maintainState: true,
+                          visible: _visible,
+                        ),
+                        Visibility(
+                          child: Container(
+                            child: Center(
+                              child: Column(
+                                children: <Widget>[
+                                  SizedBox(height: ResponsiveFlutter.of(context).hp(5),),
+                                  DelayedDisplay(
+                                    delay: Duration(seconds: initialDelay.inSeconds),
+                                    child: Lottie.asset('assets/lottie/lf30_editor_73iymqgv.json'),
+                                  ),
+                                  DelayedDisplay(
+                                    delay: Duration(seconds: initialDelay.inSeconds + 1),
+                                    child: TextField(
+                                      cursorColor: Colors.black,
+                                      decoration: InputDecoration(
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: 'Email',
+                                        hintText: 'Username or e-mail',
+                                        labelStyle: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        hintStyle: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 14.0,
+                                        ),
+                                        prefixIcon: Icon(Iconsax.user, color: Colors.black, size: 18, ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
+                                          borderRadius: BorderRadius.circular(10.0),
+                                        ),
+                                        floatingLabelStyle: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18.0,
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Colors.black, width: 1.5),
+                                          borderRadius: BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+
+                                  SizedBox(height: 20,),
+                                  DelayedDisplay(
+                                    delay: Duration(seconds: initialDelay.inSeconds + 2),
+                                    child: TextField(
+                                      cursorColor: Colors.black,
+                                      decoration: InputDecoration(
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: 'Password',
+                                        hintText: 'Password',
+                                        hintStyle: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 14.0,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(Iconsax.key, color: Colors.black, size: 18, ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
+                                          borderRadius: BorderRadius.circular(10.0),
+                                        ),
+                                        floatingLabelStyle: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18.0,
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Colors.black, width: 1.5),
+                                          borderRadius: BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  DelayedDisplay(
+                                    delay: Duration(seconds: initialDelay.inSeconds + 3),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        TextButton(
+                                          onPressed: () {},
+                                          child: Text('Forgot Password?', style: TextStyle(color: Colors.white38, fontSize: 14.0, fontWeight: FontWeight.w400),),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 30,),
+                                  DelayedDisplay(
+                                    delay: Duration(seconds: initialDelay.inSeconds + 4),
+                                    child: MaterialButton(
+                                      onPressed: (){},
+                                      height: 45,
+                                      color: Colors.white24,
+                                      child: Text("Login", style: TextStyle(color: Colors.black, fontSize: 16.0),),
+                                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 30,),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      DelayedDisplay(
+                                        delay: Duration(seconds: initialDelay.inSeconds + 5),
+                                        child: Text('Don\'t have an account?', style: TextStyle(color: Colors.grey.shade600, fontSize: 14.0, fontWeight: FontWeight.w400),),
+                                      ),
+                                      DelayedDisplay(
+                                        delay: Duration(seconds: initialDelay.inSeconds + 6),
+                                        child: TextButton(
+                                          onPressed: () {},
+                                          child: Text('Register', style: TextStyle(color: Colors.blue, fontSize: 14.0, fontWeight: FontWeight.w400),),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          visible: _visible2,
+                        ),
                   ],
                 ),
               ),
