@@ -5,7 +5,7 @@ import 'package:guardian_management/pages/stagged_gridview.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
 
 
 class StartApp extends StatelessWidget {
-  const StartApp({ Key? key }) : super(key: key);
+  const StartApp({ Key key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

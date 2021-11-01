@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:responsive_flutter/responsive_flutter.dart';
 
 class StaggeredGridViewExample extends StatefulWidget {
-  const StaggeredGridViewExample({ Key? key }) : super(key: key);
+  const StaggeredGridViewExample({ Key key }) : super(key: key);
 
   @override
   _StaggeredGridViewExampleState createState() => _StaggeredGridViewExampleState();
@@ -100,9 +101,19 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Image.network('https://img.icons8.com/material/2x/unsplash--v2.png', color: Colors.white,),
-                    Text("Waiter", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),
-                    SizedBox(height: 150,),
+                    Text("Waiter", style: TextStyle(
+                        color: Colors.white,
+                        fontSize: ResponsiveFlutter.of(context).fontSize(3),
+                        fontWeight: FontWeight.bold
+                    ),
+                    ),
+                    SizedBox(height: ResponsiveFlutter.of(context).hp(2),),
+
+                    Image.asset('assets/waiterssplash/icons/waiter.png',
+                      color: Colors.white,
+                      width: ResponsiveFlutter.of(context).wp(25),
+                    ),
+                    SizedBox(height: ResponsiveFlutter.of(context).hp(20),),
                   ],
                 ),
               ),
