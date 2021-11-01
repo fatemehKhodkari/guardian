@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:guardian_management/pages/stagged_gridview.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,7 +34,7 @@ class StartApp extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         color: Colors.black,
-        child: Center(),
+        child: Center(child: StaggeredGridViewExample(),),
       ),
     );
   }
