@@ -35,7 +35,7 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
 
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(Duration(seconds: 0), () {
       _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
           duration: Duration(seconds: images.length * 10),
@@ -59,7 +59,6 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
               itemCount: images.length,
               itemBuilder: (context, index) {
                 return Container(
-                  color: Colors.black,
                   child: Image.asset(
                     images[index],
                     fit: BoxFit.cover,
