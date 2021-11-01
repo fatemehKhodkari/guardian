@@ -101,17 +101,16 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text("Waiter", style: TextStyle(
-                        color: Colors.white,
-                        fontSize: ResponsiveFlutter.of(context).fontSize(3),
-                        fontWeight: FontWeight.bold
-                    ),
-                    ),
-                    SizedBox(height: ResponsiveFlutter.of(context).hp(2),),
-
                     Image.asset('assets/waiterssplash/icons/waiter.png',
                       color: Colors.white,
-                      width: ResponsiveFlutter.of(context).wp(25),
+                      width: ResponsiveFlutter.of(context).wp(15),
+                    ),
+                    SizedBox(height: ResponsiveFlutter.of(context).hp(2),),
+                    Text("Waiter", style: TextStyle(
+                        color: Colors.white,
+                        fontSize: ResponsiveFlutter.of(context).fontSize(2),
+                        fontWeight: FontWeight.bold
+                    ),
                     ),
                     SizedBox(height: ResponsiveFlutter.of(context).hp(20),),
                   ],
