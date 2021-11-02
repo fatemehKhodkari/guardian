@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:delayed_display/delayed_display.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:lottie/lottie.dart';
@@ -165,66 +166,76 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                           DelayedDisplay(
                             delay: Duration(seconds: initialDelay.inSeconds + 1),
                             child: TextField(
-                              cursorColor: Colors.black,
+                              cursorColor: Colors.white70,
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.all(0.0),
                                 labelText: 'Email',
                                 hintText: 'Username or e-mail',
                                 labelStyle: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14.0,
+                                  color: Colors.white70,
+                                  fontSize: ResponsiveFlutter.of(context).fontSize(1.8),
                                   fontWeight: FontWeight.w400,
                                 ),
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
-                                  fontSize: 14.0,
+                                  // fontSize: 14.0,
+                                  fontSize: ResponsiveFlutter.of(context).fontSize(1.8),
                                 ),
-                                prefixIcon: Icon(Iconsax.user, color: Colors.black, size: 18, ),
+                                prefixIcon: Icon(
+                                  Iconsax.user,
+                                  color: Colors.white70,
+                                  // size: 18,
+                                  size: ResponsiveFlutter.of(context).wp(5),
+                                ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 floatingLabelStyle: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18.0,
+                                  color: Colors.white70,
+                                  fontSize: ResponsiveFlutter.of(context).fontSize(2), //18
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                                  borderSide: BorderSide(color: Colors.brown, width: 1.5),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                               ),
                             ),
                           ),
 
-                          SizedBox(height: 20,),
+                          SizedBox(height: ResponsiveFlutter.of(context).hp(3),),
                           DelayedDisplay(
                             delay: Duration(seconds: initialDelay.inSeconds + 2),
                             child: TextField(
-                              cursorColor: Colors.black,
+                              cursorColor: Colors.white70,
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.all(0.0),
                                 labelText: 'Password',
                                 hintText: 'Password',
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
-                                  fontSize: 14.0,
+                                  fontSize: ResponsiveFlutter.of(context).fontSize(1.8),
                                 ),
                                 labelStyle: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14.0,
+                                  color: Colors.white70,
+                                  fontSize: ResponsiveFlutter.of(context).fontSize(1.8),
                                   fontWeight: FontWeight.w400,
                                 ),
-                                prefixIcon: Icon(Iconsax.key, color: Colors.black, size: 18, ),
+                                prefixIcon: Icon(
+                                  Iconsax.key,
+                                  color: Colors.white70,
+                                  size: ResponsiveFlutter.of(context).wp(5), ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 floatingLabelStyle: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18.0,
+                                  color: Colors.white70,
+                                  fontSize: ResponsiveFlutter.of(context).fontSize(2),
                                 ),
+
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                                  borderSide: BorderSide(color: Colors.brown, width: 1.5),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                               ),
