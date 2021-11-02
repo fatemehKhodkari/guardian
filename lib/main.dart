@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:guardian_management/pages/stagged_gridview.dart';
 
 void main() => runApp(MyApp());
@@ -16,10 +17,20 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return   MaterialApp(
+      title: "Waiter",
       theme: ThemeData.dark(),
       darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       home: StartApp(),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('fa'), // English, no country code
+      ],
+
     );
   }
 }

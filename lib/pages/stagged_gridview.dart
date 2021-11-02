@@ -169,8 +169,8 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                               cursorColor: Colors.white70,
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.all(0.0),
-                                labelText: 'Email',
-                                hintText: 'Username or e-mail',
+                                labelText: 'ایمیل',
+                                hintText: 'نام کاربری یا ایمیل',
                                 labelStyle: TextStyle(
                                   color: Colors.white70,
                                   fontSize: ResponsiveFlutter.of(context).fontSize(1.8),
@@ -210,8 +210,8 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                               cursorColor: Colors.white70,
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.all(0.0),
-                                labelText: 'Password',
-                                hintText: 'Password',
+                                labelText: 'رمز عبور',
+                                hintText: 'رمز عبور',
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
                                   fontSize: ResponsiveFlutter.of(context).fontSize(1.8),
@@ -248,38 +248,53 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                               children: [
                                 TextButton(
                                   onPressed: () {},
-                                  child: Text('Forgot Password?', style: TextStyle(color: Colors.white38, fontSize: 14.0, fontWeight: FontWeight.w400),),
+                                  child: Text('رمز عبور خود را فراموش کردید؟',
+                                    style: TextStyle(color: Colors.white38, 
+                                        // fontSize: 14.0, 
+                                      fontSize: ResponsiveFlutter.of(context).fontSize(2),
+                                      fontWeight: FontWeight.w400,
+                                    ),),
                                 )
                               ],
                             ),
                           ),
-                          SizedBox(height: 30,),
+                          SizedBox(height: ResponsiveFlutter.of(context).hp(5),),
                           DelayedDisplay(
                             delay: Duration(seconds: initialDelay.inSeconds + 4),
                             child: MaterialButton(
                               onPressed: (){},
-                              height: 45,
+                              height: ResponsiveFlutter.of(context).hp(5),
                               color: Colors.white24,
-                              child: Text("Login", style: TextStyle(color: Colors.black, fontSize: 16.0),),
-                              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+                              child: Text("ورود", style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize:  ResponsiveFlutter.of(context).fontSize(2.2),
+                              ),),
+                              padding: EdgeInsets.symmetric(
+                                  vertical:  ResponsiveFlutter.of(context).hp(1),
+                                  horizontal: ResponsiveFlutter.of(context).wp(10)
+                              ),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                             ),
                           ),
-                          SizedBox(height: 30,),
+                          SizedBox(height: ResponsiveFlutter.of(context).hp(5),),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               DelayedDisplay(
                                 delay: Duration(seconds: initialDelay.inSeconds + 5),
-                                child: Text('Don\'t have an account?', style: TextStyle(color: Colors.grey.shade600, fontSize: 14.0, fontWeight: FontWeight.w400),),
+                                child: Text('حساب کاربری ندارید؟', style: TextStyle(color: Colors.grey.shade600,
+                                    fontSize: ResponsiveFlutter.of(context).fontSize(2),
+                                    fontWeight: FontWeight.w400),),
                               ),
                               DelayedDisplay(
                                 delay: Duration(seconds: initialDelay.inSeconds + 6),
                                 child: TextButton(
                                   onPressed: () {},
-                                  child: Text('Register', style: TextStyle(color: Colors.blue, fontSize: 14.0, fontWeight: FontWeight.w400),),
+                                  child: Text('ثبت نام', style: TextStyle(color: Colors.blue,
+                                      fontSize: ResponsiveFlutter.of(context).fontSize(2),
+                                      fontWeight: FontWeight.w400),),
                                 ),
                               ),
                             ],
