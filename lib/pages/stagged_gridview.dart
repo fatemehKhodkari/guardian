@@ -54,7 +54,6 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
       if (this.mounted) { //checks if widget is still active and not disposed
         setState(() { //tells the widget builder to rebuild again because ui has updated
           _visible=false; //update the variable declare this under your class so its accessible for both your widget build and initState which is located under widget build{}
-          _visible2=true;
         });
       }
     });
@@ -110,164 +109,180 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                     topRight: Radius.circular(20),
                   ),
                 ),
-                child:
-                    Stack(
-                      children: [
-                        Visibility(
-                          child: Container(
-                            child: Center(
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                child: AnimatedCrossFade(
+                  firstChild: Container(
+                    child: Center(
+                  child: Column(
+                          // crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Stack(
+                              children: [
+                                Column(
                                   children: [
-                                    Image.asset('assets/waiterssplash/icons/waiter1.png',
-                                      color: Colors.white,
-                                      width: ResponsiveFlutter.of(context).wp(30),
-                                    ),
-                                    SizedBox(height: ResponsiveFlutter.of(context).hp(2),),
-                                    Text("Waiter", style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: ResponsiveFlutter.of(context).fontSize(2),
-                                        fontWeight: FontWeight.bold
-                                    ),
-                                    ),
-                                  ]
-                              ),
-                            ),
-                          ),
-                          maintainSize: true,
-                          maintainAnimation: true,
-                          maintainState: true,
-                          visible: _visible,
-                        ),
-                        Visibility(
-                          child: Container(
-                            child: Center(
-                              child: Column(
-                                children: <Widget>[
-                                  SizedBox(height: ResponsiveFlutter.of(context).hp(5),),
-                                  DelayedDisplay(
-                                    delay: Duration(seconds: initialDelay.inSeconds),
-                                    child: Lottie.asset('assets/lottie/lf30_editor_73iymqgv.json'),
-                                  ),
-                                  DelayedDisplay(
-                                    delay: Duration(seconds: initialDelay.inSeconds + 1),
-                                    child: TextField(
-                                      cursorColor: Colors.black,
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.all(0.0),
-                                        labelText: 'Email',
-                                        hintText: 'Username or e-mail',
-                                        labelStyle: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 14.0,
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                        hintStyle: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 14.0,
-                                        ),
-                                        prefixIcon: Icon(Iconsax.user, color: Colors.black, size: 18, ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
-                                          borderRadius: BorderRadius.circular(10.0),
-                                        ),
-                                        floatingLabelStyle: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18.0,
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.black, width: 1.5),
-                                          borderRadius: BorderRadius.circular(10.0),
-                                        ),
+                                    SizedBox(height: ResponsiveFlutter.of(context).hp(5),),
+                                    Center(
+                                      child: Lottie.asset(
+                                        'assets/lottie/lf30_editor_73iymqgv.json',
+                                        height: ResponsiveFlutter.of(context).hp(30),
                                       ),
-                                    ),
-                                  ),
+                                    )
+                                  ],
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
 
-                                  SizedBox(height: 20,),
-                                  DelayedDisplay(
-                                    delay: Duration(seconds: initialDelay.inSeconds + 2),
-                                    child: TextField(
-                                      cursorColor: Colors.black,
-                                      decoration: InputDecoration(
-                                        contentPadding: EdgeInsets.all(0.0),
-                                        labelText: 'Password',
-                                        hintText: 'Password',
-                                        hintStyle: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 14.0,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                      SizedBox(height: ResponsiveFlutter.of(context).hp(25),),
+                                      Center(
+                                        child: Text("Waiter", style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: ResponsiveFlutter.of(context).fontSize(2),
+                                            fontWeight: FontWeight.bold
                                         ),
-                                        labelStyle: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 14.0,
-                                          fontWeight: FontWeight.w400,
+                                          textAlign: TextAlign.center,
                                         ),
-                                        prefixIcon: Icon(Iconsax.key, color: Colors.black, size: 18, ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
-                                          borderRadius: BorderRadius.circular(10.0),
-                                        ),
-                                        floatingLabelStyle: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18.0,
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(color: Colors.black, width: 1.5),
-                                          borderRadius: BorderRadius.circular(10.0),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  DelayedDisplay(
-                                    delay: Duration(seconds: initialDelay.inSeconds + 3),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        TextButton(
-                                          onPressed: () {},
-                                          child: Text('Forgot Password?', style: TextStyle(color: Colors.white38, fontSize: 14.0, fontWeight: FontWeight.w400),),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 30,),
-                                  DelayedDisplay(
-                                    delay: Duration(seconds: initialDelay.inSeconds + 4),
-                                    child: MaterialButton(
-                                      onPressed: (){},
-                                      height: 45,
-                                      color: Colors.white24,
-                                      child: Text("Login", style: TextStyle(color: Colors.black, fontSize: 16.0),),
-                                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10.0),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(height: 30,),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      DelayedDisplay(
-                                        delay: Duration(seconds: initialDelay.inSeconds + 5),
-                                        child: Text('Don\'t have an account?', style: TextStyle(color: Colors.grey.shade600, fontSize: 14.0, fontWeight: FontWeight.w400),),
-                                      ),
-                                      DelayedDisplay(
-                                        delay: Duration(seconds: initialDelay.inSeconds + 6),
-                                        child: TextButton(
-                                          onPressed: () {},
-                                          child: Text('Register', style: TextStyle(color: Colors.blue, fontSize: 14.0, fontWeight: FontWeight.w400),),
-                                        ),
-                                      ),
+                                      )
                                     ],
                                   ),
-                                ],
+                              ],
+                            )
+                          ]
+                  ),
+                    )),
+                  duration: const Duration(milliseconds: 1000),
+                  secondChild: Container(
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          SizedBox(height: ResponsiveFlutter.of(context).hp(5),),
+                          Lottie.asset(
+                              'assets/lottie/lf30_editor_73iymqgv.json',
+                              height: ResponsiveFlutter.of(context).hp(30),
+                            ),
+                          DelayedDisplay(
+                            delay: Duration(seconds: initialDelay.inSeconds + 1),
+                            child: TextField(
+                              cursorColor: Colors.black,
+                              decoration: InputDecoration(
+                                contentPadding: EdgeInsets.all(0.0),
+                                labelText: 'Email',
+                                hintText: 'Username or e-mail',
+                                labelStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                                hintStyle: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 14.0,
+                                ),
+                                prefixIcon: Icon(Iconsax.user, color: Colors.black, size: 18, ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                floatingLabelStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18.0,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
                               ),
                             ),
                           ),
-                          visible: _visible2,
-                        ),
-                  ],
+
+                          SizedBox(height: 20,),
+                          DelayedDisplay(
+                            delay: Duration(seconds: initialDelay.inSeconds + 2),
+                            child: TextField(
+                              cursorColor: Colors.black,
+                              decoration: InputDecoration(
+                                contentPadding: EdgeInsets.all(0.0),
+                                labelText: 'Password',
+                                hintText: 'Password',
+                                hintStyle: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 14.0,
+                                ),
+                                labelStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                                prefixIcon: Icon(Iconsax.key, color: Colors.black, size: 18, ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                floatingLabelStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18.0,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                          DelayedDisplay(
+                            delay: Duration(seconds: initialDelay.inSeconds + 3),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                TextButton(
+                                  onPressed: () {},
+                                  child: Text('Forgot Password?', style: TextStyle(color: Colors.white38, fontSize: 14.0, fontWeight: FontWeight.w400),),
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 30,),
+                          DelayedDisplay(
+                            delay: Duration(seconds: initialDelay.inSeconds + 4),
+                            child: MaterialButton(
+                              onPressed: (){},
+                              height: 45,
+                              color: Colors.white24,
+                              child: Text("Login", style: TextStyle(color: Colors.black, fontSize: 16.0),),
+                              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 30,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              DelayedDisplay(
+                                delay: Duration(seconds: initialDelay.inSeconds + 5),
+                                child: Text('Don\'t have an account?', style: TextStyle(color: Colors.grey.shade600, fontSize: 14.0, fontWeight: FontWeight.w400),),
+                              ),
+                              DelayedDisplay(
+                                delay: Duration(seconds: initialDelay.inSeconds + 6),
+                                child: TextButton(
+                                  onPressed: () {},
+                                  child: Text('Register', style: TextStyle(color: Colors.blue, fontSize: 14.0, fontWeight: FontWeight.w400),),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  firstCurve: Curves.easeOut,
+                  secondCurve: Curves.easeIn,
+                  sizeCurve: Curves.bounceInOut,
+                  crossFadeState: _visible
+                      ? CrossFadeState.showFirst
+                      : CrossFadeState.showSecond,
+
                 ),
               ),
             )
