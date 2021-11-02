@@ -165,48 +165,55 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                             ),
                           DelayedDisplay(
                             delay: Duration(seconds: initialDelay.inSeconds + 1),
-                            child: TextField(
-                              cursorColor: Colors.white70,
-                              decoration: InputDecoration(
-                                contentPadding: EdgeInsets.all(0.0),
-                                labelText: 'ایمیل',
-                                hintText: 'نام کاربری یا ایمیل',
-                                labelStyle: TextStyle(
+                              child: TextField(
+                                style: TextStyle(
                                   color: Colors.white70,
-                                  fontSize: ResponsiveFlutter.of(context).fontSize(1.8),
-                                  fontWeight: FontWeight.w400,
+                                  fontSize: ResponsiveFlutter.of(context).fontSize(2.2),
                                 ),
-                                hintStyle: TextStyle(
-                                  color: Colors.grey,
-                                  // fontSize: 14.0,
-                                  fontSize: ResponsiveFlutter.of(context).fontSize(1.8),
+                                cursorColor: Colors.white70,
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.all(0.0),
+                                  labelText: 'ایمیل',
+                                  hintText: 'نام کاربری یا ایمیل',
+                                  labelStyle: TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: ResponsiveFlutter.of(context).fontSize(2),
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                  hintStyle: TextStyle(
+                                    color: Colors.grey,
+                                    // fontSize: 14.0,
+                                    fontSize: ResponsiveFlutter.of(context).fontSize(1.8),
+                                  ),
+                                  prefixIcon: Icon(
+                                    Iconsax.user,
+                                    color: Colors.white70,
+                                    // size: 18,
+                                    size: ResponsiveFlutter.of(context).wp(5),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  floatingLabelStyle: TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: ResponsiveFlutter.of(context).fontSize(2), //18
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.brown, width: 1.5),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
                                 ),
-                                prefixIcon: Icon(
-                                  Iconsax.user,
-                                  color: Colors.white70,
-                                  // size: 18,
-                                  size: ResponsiveFlutter.of(context).wp(5),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                                floatingLabelStyle: TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: ResponsiveFlutter.of(context).fontSize(2), //18
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.brown, width: 1.5),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
-                              ),
-                            ),
+                            )
                           ),
-
                           SizedBox(height: ResponsiveFlutter.of(context).hp(3),),
                           DelayedDisplay(
                             delay: Duration(seconds: initialDelay.inSeconds + 2),
                             child: TextField(
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: ResponsiveFlutter.of(context).fontSize(2.2),
+                              ),
                               cursorColor: Colors.white70,
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.all(0.0),

@@ -18,7 +18,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return   MaterialApp(
       title: "Waiter",
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+        primaryColor: Colors.brown,
+          primarySwatch: Colors.brown
+      ),
       darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       home: StartApp(),
