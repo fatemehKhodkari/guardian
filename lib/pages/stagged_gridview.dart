@@ -125,7 +125,7 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                                     SizedBox(height: ResponsiveFlutter.of(context).hp(5),),
                                     Center(
                                       child: Lottie.asset(
-                                        'assets/lottie/lf30_editor_73iymqgv.json',
+                                        'assets/lottie/lf30_editor_rwlk5vd0.json',
                                         height: ResponsiveFlutter.of(context).hp(30),
                                       ),
                                     )
@@ -160,7 +160,7 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                         children: <Widget>[
                           SizedBox(height: ResponsiveFlutter.of(context).hp(5),),
                           Lottie.asset(
-                              'assets/lottie/lf30_editor_73iymqgv.json',
+                              'assets/lottie/lf30_editor_rwlk5vd0.json',
                               height: ResponsiveFlutter.of(context).hp(30),
                             ),
                           DelayedDisplay(
