@@ -167,7 +167,7 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                             delay: Duration(seconds: initialDelay.inSeconds + 1),
                               child: TextField(
                                 style: TextStyle(
-                                  color: Colors.white70,
+                                  color: Colors.white60,
                                   fontSize: ResponsiveFlutter.of(context).fontSize(2.2),
                                 ),
                                 cursorColor: Colors.white70,
