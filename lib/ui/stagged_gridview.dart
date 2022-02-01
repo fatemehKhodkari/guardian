@@ -185,11 +185,13 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                                     // fontSize: 14.0,
                                     fontSize: ResponsiveFlutter.of(context).fontSize(1.8),
                                   ),
-                                  prefixIcon: Icon(
-                                    Iconsax.user,
-                                    color: Colors.white70,
-                                    // size: 18,
-                                    size: ResponsiveFlutter.of(context).wp(5),
+                                  prefixIcon: Container(
+                                    child: Icon(
+                                      Icon(Iconsax.user,color: Colors.white70).icon,
+                                      // color: Colors.white70,
+                                      // size: 18,
+                                      size: ResponsiveFlutter.of(context).wp(5),
+                                    ),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.grey.shade200, width: 2),
