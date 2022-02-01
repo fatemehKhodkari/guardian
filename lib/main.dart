@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:guardian_management/pages/stagged_gridview.dart';
+import 'package:guardian_management/ui/stagged_gridview.dart';
 
 void main() => runApp(MyApp());
 
