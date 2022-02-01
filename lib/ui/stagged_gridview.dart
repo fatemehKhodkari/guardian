@@ -176,7 +176,7 @@ class _StaggeredGridViewExampleState extends State<StaggeredGridViewExample> {
                                   labelText: 'ایمیل',
                                   hintText: 'نام کاربری یا ایمیل',
                                   labelStyle: TextStyle(
-                                    color: Colors.white70,
+                                    color: Colors.white60,
                                     fontSize: ResponsiveFlutter.of(context).fontSize(2),
                                     fontWeight: FontWeight.w400,
                                   ),
